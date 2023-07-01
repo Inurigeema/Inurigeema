@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BCC News</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+   body{
+    background-color: maroon;
+  }
+
+/* CSS for navigation bar */
+ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;  
+}
+.navbar{
+  background-color: #f1f1f1;
+  }
+
+ li {
+  float: left;
+}
+
+ul.navbar li a {
+  display: block;
+  color: #333;
+  text-align: center;
+  padding:23px 16px;
+  text-decoration: none;
+}
+
+ul.navbar li a:hover {
+  background-color: #ddd;
+}
+
+/* CSS for dropdowns */
+ul.navbar li.dropdown {
+  display: inline-block;
+}
+
+ul.navbar .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+}
+
+ul.navbar li.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+ul.navbar .dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+
+
+/* CSS for search bar */
+.search-bar {
+  float: right;
+  margin: 15px;
+}
+
+.search-bar input[type=text] {
+  padding: 6px;
+  border: none;
+  font-size: 14px;
+}
+
+.search-bar button {
+  padding: 6px;
+  background: #ddd;
+  border: none;
+  cursor: pointer;
+}
+img
+{
+  width: 70px;
+  float: left;
+}
+
+</style>
+</head>
+<body>
+  <div class="navbar">
+<!-- Navigation bar -->
+ <a href="#home"><img src="https://th.bing.com/th/id/OIP.i4kKwMzAfXZwp0hANjdy_AHaFj?w=194&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" ;></a>
+</div>
+  <ul class="navbar">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li class="dropdown">
+    <a href="#contact">Contact</a>
+    <div class="dropdown-content">
+      <a href="#GeneralNumber">General Number</a>
+      <a href="#Email">Email</a>
+      <a href="#Address">Address</a>
+    </div>
+  </li>
+  <li class="dropdown">
+    <a href="#about">About</a>
+    <div class="dropdown-content">
+      <a href="#Writers">Writers</a>
+      <a href="#Editors">Editors</a>
+      <a href="#Management">Management</a>
+    </div>
+  </li>
+  <li class="search-bar">
+    <input type="text" placeholder="Search...">
+    <button type="submit">Search</button>
+  </li>
+</ul>
+
+</body>
+</html>
