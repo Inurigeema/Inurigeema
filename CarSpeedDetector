@@ -1,0 +1,50 @@
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27, 16, 2); // I2C address 0x27, 16 column and 2 rows
+const int sensor1 = A0; // pin connected to IR sensor 1
+const int sensor2 = A1; // pin connected to IR sensor 2
+const int sensor3 = A2; // pin connected to IR sensor 3
+
+void setup() {
+Serial.begin(9600);
+pinMode(sensor1, INPUT);
+pinMode(sensor2, INPUT);
+pinMode(sensor3, INPUT);
+lcd.init(); // initialize the lcd
+lcd.backlight();
+lcd.setCursor(0,0);
+lcd.print(" Searching... ");
+}
+
+void loop() {
+
+while(digitalRead(sensor1));//sensor 1 detected the vehicle
+  while(digitalRead(sensor1)==0);//vehicle passed the sensor 1
+ float t1=millis();
+  while(digitalRead(sensor2));//sensor 2 detected the vehicle
+  while(digitalRead(sensor2)==0);//vehicle passed the sensor 2
+ float t2=millis();
+ while(digitalRead(sensor3));//sensor 3 detected the vehicle
+  float t3=millis();
+float  velocity=((t2-t1)+(t3-t2))/2;
+  velocity=velocity/1000;//convert millisecond to second
+  velocity=(0.2/velocity);//v=d/t
+  velocity=velocity*3600;//multiply by seconds per hr
+  velocity=velocity/1000;//division by meters per Km
+  
+   lcd.clear();                 // clear display
+   lcd.setCursor(2,0);
+   lcd.print(velocity);
+   lcd.print(" Km/h   ");
+
+   // Set the speed limit in km/hr
+const int SPEED_LIMIT = 3.0;
+
+// Check if the car has exceeded the speed limit
+if(velocity > SPEED_LIMIT) {
+// Print a message if the car has exceeded the speed limit              
+  lcd.setCursor(2,1);         // move cursor to   (2,1)
+  lcd.print("Slow Down");     //print the warning message
+} 
+// Wait for 500 milliseconds
+delay(500);
+}
