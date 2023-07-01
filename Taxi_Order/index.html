@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form - LAB 3 - Modified</title>
+  <style>
+     
+    body{
+    font-family:calibri;
+    zoom: 80%;
+    width: 800px;
+    
+    position: fixed;
+    font-style: italic;
+    left: 50%;
+    margin-left: -400px;
+    margin-top: -20px;
+    
+    }
+    
+    .stuff{
+      background-color:#efa8ba;
+    }
+
+    .button {
+    float:right;
+    position:absolute;
+    bottom:40px;
+    right:25px;
+    background-color: #622a55; 
+    border: 2px solid black ;
+    color: white;
+    padding: 15px 37px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 80px;
+  }
+   
+  </style>
+</head>
+<body>
+ <div class="stuff">
+  <br>
+  <h1 style="color:#622a55" ;><b><i><u><center>LOVELY TAXI</center></u></i></b></h1>
+<form action="store_data.php" method="post">
+<!-- TEXT -->
+<table>
+  <tr>
+    <td><label for="name">Name</label></td>
+   <td><input type="text" id="name" name="name" ></td>
+</tr>
+<tr>
+  <td><label for="pwd">Password:</label></td>
+  <td><input type="password" id="pwd" name="pwd[]"></td> 
+</tr>
+<tr>
+   <td><label for="email">Email</label></td>
+  <td><input type="email" id="email" name="email"></td>
+</tr>
+</table>
+<br><br>
+
+<!-- Add Text in Borders -->
+<fieldset>
+<legend>Which taxi do you required?</legend>
+
+<!-- radio button -->
+<!-- must have share the same name -->
+<br>
+<input type="radio" id="car" name="taxi[]" value="car">
+<lebel for="car">Car</lebel><br>
+<input type="radio" id="van" name="taxi[]" value="van">
+<lebel for="van">Van</lebel><br>
+<input type="radio" id="tuktuk" name="taxi[]" value="tuktuk">
+<lebel for="tuktuk">Tuk Tuk</lebel>
+<br><br>
+</fieldset>
+
+<!-- checkbox -->
+<fieldset>
+  <legend>Extras</legend>
+  <br>
+  <input type="checkbox" id="babyseat" name="extras[]" value="babyseat">
+  <label for="babyseat">Baby Seat</label><br>
+  <input type="checkbox" id="Wheelchair" name="extras[]" value="Wheelchair">
+  <label for="Wheelchair"> Wheelchair Access</label><br>
+  <input type="checkbox" id="stock Tip" name="extras[]" value="stock Tip">
+  <label for="stock Tip">Stock Tip</label>
+  <br><br>
+</fieldset>
+
+
+<br><br>
+<table>
+  <!-- Date and time -->
+  <tr>
+<td><label for="date">Pickup Date/Time</label></td>
+  <td><input type="datetime-local" id="date" name="date" value="2023-03-26T16:25"></td>
+</tr>
+<tr>
+  
+<!-- Drop Down List -->
+  <td><label for="cars">Pickup Place</label></td>
+<td><select name="pickupPl" id="pickupPl">
+ <option value="">Select One</option>
+  <option value="Nilai">Nilai</option>
+  <option value="KL">KL</option>
+  <option value="Penang">Penang</option>
+  <option value="Melakka">Melakka</option>
+</select></td>
+</tr>
+<tr>
+ <td><label for="dropoff">Dropoff Place</label></td>
+  <td><input type="text" id="dropoff" name="dropoff"></td>
+</tr>
+</table>
+<br>
+
+
+  <!-- for multiple attributes(scroll appears) -->
+  <p style="border:2px solid gray" ><br><br>Choose a car:
+  <select name="cars[]" id="cars" multiple>
+    <option value="volvo">Volvo</option>
+    <option value="saab">Saab</option>
+    <option value="opel">Fiat</option>
+    <option value="audi">Audi</option>
+    <option value="opel">Opel</option>
+  </select><br><br><br></p>
+
+
+<!-- text area -->
+<lebel for="ints">Spacial Instructions</lebel>
+<textarea id="ints" name="ints" rows="3" cols="30" maxlength="100"> </textarea>
+<!-- changed the character length of text area -->
+
+<!-- submit -->
+<input class="button" type="submit" value="Submit Booking">
+</form>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>
